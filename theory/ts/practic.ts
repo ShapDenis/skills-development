@@ -32,20 +32,15 @@ const isUser = (value: unknown) => {
     throw new Error(`переданное значение не является объектом: ${JSON.stringify(value)}`)
   }
 
-
   if (value === null) {
     throw new Error(`переданное значение не является объектом: ${JSON.stringify(value)}`)
   }
-
-
 
   if (!("login" in value)) return false
 
   if (typeof value.login === "string") return false
 
-
   return true
-
 }
 
 
@@ -114,5 +109,14 @@ const sumArray = (value: number[]) => {
   return value.reduce((acc, item) => acc + item, 0)
 
 }
-
 console.log(sumArray(numbers))
+
+
+
+
+// Напиши функцию isString, которая проверяет, является ли значение строкой.
+
+const isString = (value: unknown): boolean => typeof value === "string"
+
+console.log(isString(123));
+console.log(isString("123"));
